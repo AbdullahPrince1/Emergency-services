@@ -73,54 +73,63 @@
         </section>
         <!-- main content -->
         <section class="w-11/12 mx-auto grid grid-cols-12 gap-7 bg-[#f5fff6] mt-12 mb-20">
-  
-            
-            <div class="col-span-9 bg-white ">
-                 <div class="grid grid-cols-3 gap-7" id="cardParent">
-                    <!-- card --> 
 
-                    
+
+            <div class="col-span-9 bg-white ">
+                <div class="grid grid-cols-3 gap-7" id="cardParent">
+                    <!-- card -->
+
+
                     <div class=" p-8 shadow-xl/20 rounded-xl">
-                    <figure class="flex justify-between items-center">
-                        <img src="./assets/emergency.png" alt="emergency" class="w-11 rounded-xl bg-red-100 p-3">
-                        <i id="heart-icon" class="fa-solid fa-heart w-6"></i>
-                    </figure>
-                    <div class="mt-4">
-                        <h1 class="font-bold text-2xl text-[#111111] mb-1">
-                            জাতীয় জরুরি সেবা
-                        </h1>
-                        <h3 class="text-sm text-[#5C5C5C] servive-name" id="service-name">
-                            National Emergency
-                        </h3>
-                        <p class="text-[#111111] font-bold text-xl mt- mb-1 service-number" id="service-number">999</p>
-                        <p class="bg-gray-300 px-4 py-1.5 w-20 text-xs rounded-l-xl rounded-r-xl">সার্বজনীন</p>
+                        <figure class="flex justify-between items-center">
+                            <img src="./assets/emergency.png" alt="emergency" class="w-11 rounded-xl bg-red-100 p-3">
+                            <i id="heart-icon" class="fa-solid fa-heart w-6"></i>
+                        </figure>
+                        <div class="mt-4">
+                            <h1 class="font-bold text-2xl text-[#111111] mb-1">
+                                জাতীয় জরুরি সেবা
+                            </h1>
+                            <h3 class="text-sm text-[#5C5C5C] servive-name" id="service-name">
+                                National Emergency
+                            </h3>
+                            <p class="text-[#111111] font-bold text-xl mt- mb-1 service-number" id="service-number">999
+                            </p>
+                            <p class="bg-gray-300 px-4 py-1.5 w-20 text-xs rounded-l-xl rounded-r-xl">সার্বজনীন</p>
+                        </div>
+                        <div class="flex justify-between items-center mt-5 gap-2">
+                            <button type="button"
+                                class="flex gap-2 items-center ring-1 ring-gray-300  rounded-lg w-44 h-10 justify-center px-4 py-2">
+                                <i class="fa-solid fa-copy"></i>
+                                <p class="text-center copy-btn" id="copy-btn">Copy</p>
+                            </button>
+                            <button type="button" id="clickme"
+                                class="flex gap-2 items-center bg-green-600 text-white rounded-lg w-44 h-10 justify-center call-btn">
+                                <i class="fa-solid fa-phone"></i>
+                                <p>Call</p>
+                            </button>
+                        </div>
                     </div>
-                    <div class="flex justify-between items-center mt-5 gap-2">
-                        <button type="button"
-                            class="flex gap-2 items-center ring-1 ring-gray-300  rounded-lg w-44 h-10 justify-center px-4 py-2">
-                            <i class="fa-solid fa-copy"></i>
-                            <p class="text-center copy-btn" id="copy-btn">Copy</p>
-                        </button>
-                        <button type="button" id="clickme"
-                            class="flex gap-2 items-center bg-green-600 text-white rounded-lg w-44 h-10 justify-center call-btn">
-                            <i class="fa-solid fa-phone"></i>
-                            <p>Call</p>
-                        </button>
-                    </div>
+
                 </div>
-   
-                 </div>
 
 
             </div>
 
-            
+
             <div class="col-span-3">
+
+<div>history</div>
+<div id="service-history">
+
+
+
+</div>
 
             </div>
         </section>
     </main>
 
+    <!-- call history -->
 
 
     <script src="script.js"></script>
