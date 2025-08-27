@@ -14,15 +14,12 @@ for (const btn of btns) {
       alert(`📞 Calling ${serviceName} service ${number}...`);
       const callCharge = Number(totalCoin) - 20;
       getId("total-coin").innerText = callCharge;
-    } else {
-      alert("❌ আপনার পর্যাপ্ত কয়েন নেই । কাল করতে কমপক্ষে ২০ কয়েন লাগবে");
-    }
-    // history
-    const time = new Date().toLocaleTimeString();
-    const serviceHistory = getId("service-history");
-    const historyElement = document.createElement("div");
-    historyElement.innerHTML = `
-                        <div class="flex justify-between mb-2 items-center p-3 bg-gray-200 rounded-lg">
+      // history
+      const time = new Date().toLocaleTimeString();
+      const serviceHistory = getId("service-history");
+      const historyElement = document.createElement("div");
+      historyElement.innerHTML = `
+                  <div class="flex justify-between mb-2 items-center p-4 bg-gray-200 rounded-lg">
                     <div>
                         <h1>${serviceTitle}</h1>
                         <span>${number}</span>
@@ -30,15 +27,34 @@ for (const btn of btns) {
                     <span>${time}</span>
                 </div>
         `;
-    serviceHistory.append(historyElement);
-    // serviceHistory.remove()
+      serviceHistory.append(historyElement);
+      // .remove
+      const clearBtn = getId("clear-btn");
+      clearBtn.addEventListener("click", function () {
+        serviceHistory.remove(historyElement);
+      });
+    } else {
+      alert("❌ আপনার পর্যাপ্ত কয়েন নেই । কাল করতে কমপক্ষে ২০ কয়েন লাগবে");
+    }
   });
 }
 //heart-count
-const heartIcon = getId("heart-icon");
-heartIcon.addEventListener("click", function () {
-  const totalHeart = getId("total-heart").innerText;
-  const calculatedHeart = Number(totalHeart) + 1;
-  console.log(calculatedHeart);
-  getId("total-heart").innerText = calculatedHeart;
-});
+const heartbtns = document.getElementsByClassName("heart-icon");
+for (const heartbtn of heartbtns) {
+  heartbtn.addEventListener("click", function () {
+    const totalHeart = getId("total-heart").innerText;
+    const calculatedHeart = Number(totalHeart) + 1;
+    getId("total-heart").innerText = calculatedHeart;
+  });
+}
+//copy count
+const copyBtns = document.getElementsByClassName("copy-btn");
+for (const copyBtn of copyBtns) {
+  copyBtn.addEventListener("click", function () {
+    // navigator.clipboard.writeText(this.innerText);
+    const totalCopy = getId("total-copy").innerText;
+    const copyCount = Number(totalCopy) + 1;
+    getId("total-copy").innerText = copyCount;
+    console.log(copyCount);
+  });
+}
