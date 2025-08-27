@@ -19,7 +19,7 @@ for (const btn of btns) {
       const serviceHistory = getId("service-history");
       const historyElement = document.createElement("div");
       historyElement.innerHTML = `
-                  <div class="flex justify-between mb-2 items-center p-4 bg-gray-200 rounded-lg">
+                  <div class="flex justify-between mb-2 items-center p-4 bg-gray-100 rounded-lg">
                     <div>
                         <h1>${serviceTitle}</h1>
                         <span>${number}</span>
@@ -28,10 +28,9 @@ for (const btn of btns) {
                 </div>
         `;
       serviceHistory.append(historyElement);
-
       const navhistoryElement = document.createElement("div");
       navhistoryElement.innerHTML = `
-       <div class="flex justify-between mb-2 items-center p-4 bg-gray-200 rounded-lg">
+       <div class="flex justify-between mb-2 items-center p-4 bg-gray-100 rounded-lg">
                     <div>
                         <h1>${serviceTitle}</h1>
                         <span>${number}</span>
@@ -68,10 +67,13 @@ for (const heartbtn of heartbtns) {
 const copyBtns = document.getElementsByClassName("copy-btn");
 for (const copyBtn of copyBtns) {
   copyBtn.addEventListener("click", function () {
+    const copyNumber =
+      copyBtn.parentNode.parentNode.children[1].children[2].innerText;
+    navigator.clipboard.writeText(copyNumber);
+    alert(`নম্বর কপি হয়েছে ${copyNumber}`);
     const totalCopy = getId("total-copy").innerText;
     const copyCount = Number(totalCopy) + 1;
     getId("total-copy").innerText = copyCount;
-    console.log(copyCount);
   });
 }
 const historyBtn = getId("nav-history-btn");
